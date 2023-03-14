@@ -28,8 +28,7 @@ public struct BlurView: NSViewRepresentable {
     }
 }
 
-#else
-
+#elseif os(iOS)
 @available(iOS 13, *)
 public struct BlurView: UIViewRepresentable {
     public typealias UIViewType = UIVisualEffectView
@@ -42,5 +41,5 @@ public struct BlurView: UIViewRepresentable {
         uiView.effect = UIBlurEffect(style: .systemMaterial)
     }
 }
-
+#else
 #endif

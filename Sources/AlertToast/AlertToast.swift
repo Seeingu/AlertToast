@@ -11,6 +11,7 @@
 import SwiftUI
 import Combine
 
+#if !os(watchOS)
 @available(iOS 13, macOS 11, *)
 fileprivate struct AnimatedCheckmark: View {
     
@@ -706,3 +707,4 @@ public extension View{
         }
     }
 }
+#endif

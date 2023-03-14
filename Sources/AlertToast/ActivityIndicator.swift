@@ -24,7 +24,7 @@ struct ActivityIndicator: NSViewRepresentable {
     func updateNSView(_ nsView: NSProgressIndicator, context: NSViewRepresentableContext<ActivityIndicator>) {
     }
 }
-#else
+#elseif os(iOS)
 @available(iOS 13, *)
 struct ActivityIndicator: UIViewRepresentable {
 
@@ -39,4 +39,5 @@ struct ActivityIndicator: UIViewRepresentable {
     func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<ActivityIndicator>) {
     }
 }
+#else
 #endif
